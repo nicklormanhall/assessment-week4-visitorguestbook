@@ -5,17 +5,17 @@ const db = new Database("database.db"); // either creates a db, or gets the exis
 db.exec(`
     CREATE TABLE IF NOT EXISTS review (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nameofreviewer TEXT,
+        reviewer TEXT,
         subject TEXT NOT NULL,
         message INTEGER NOT NULL,
-        dateofreview TEXT NOT NULL,
-        starrating INTEGER
+        date TEXT NOT NULL,
+        rating INTEGER
         
     )
 `);
 
 const insertStatement = db.prepare(
-  `INSERT INTO review (nameofreviewer,subject, message, dateofreview, starrating) VALUES (?, ?, ?, ?, ?)`
+  `INSERT INTO review (reviewer,subject, message, date, rating) VALUES (?, ?, ?, ?, ?)`
 );
 
 insertStatement.run(
@@ -35,7 +35,7 @@ insertStatement.run(
 insertStatement.run(
   "Stephen King",
   "Time for a good book",
-  "The Overlook Hotel is a fascinating destination that sparks the imagination. From the moment you arrive, you can sense the rich history that permeates its halls. The grandeur of the architecture and the breathtaking mountain views make it an ideal setting for a writer seeking inspiration. The staff is friendly and accommodating, making you feel right at home. While there is a hint of mystery in the air, it only adds to the charm and allure of the place. The Overlook Hotel is a haven for creative minds, a retreat where the stories seem to come alive. It's a perfect blend of tranquility and inspiration, making it a great place to dive into a good book or let your own ideas take flight.",
+  "What a fascinating destination that sparks the imagination. From the moment you arrive, you can sense the rich history that permeates its halls. The grandeur of the architecture and the breathtaking mountain views make it an ideal setting for a writer seeking inspiration. The staff is friendly and accommodating, making you feel right at home. While there is a hint of mystery in the air, it only adds to the charm and allure of the place. The Overlook Hotel is a haven for creative minds, a retreat where the stories seem to come alive. It's a perfect blend of tranquility and inspiration, making it a great place to dive into a good book or let your own ideas take flight.",
   "23/06/1974 19:06:20",
   5
 );

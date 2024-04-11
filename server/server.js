@@ -13,6 +13,9 @@ const message = [
   {
     subject: "testing subject",
     message: "test message",
+    reviewer: "Nick",
+    date: "11/04/2024 16:28:00",
+    rating: 5,
   },
 ];
 

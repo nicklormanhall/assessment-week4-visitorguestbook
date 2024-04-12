@@ -18,8 +18,8 @@ async function getReviews() {
     h2.textContent = review.subject;
     p.textContent = review.message;
     p2.textContent = `Left by: ${review.reviewer} | `;
-    p3.textContent = `On Date: ${review.date} | `;
-    p4.textContent = `Rating: ${review.rating} star`;
+    p3.textContent = `On: ${review.date} | `;
+    p4.textContent = `Rating: ${review.rating} \u2605`;
 
     previousReviews.appendChild(h2);
     previousReviews.appendChild(p);
@@ -57,6 +57,7 @@ function handleSubmit(event) {
       "Content-Type": "application/json",
     },
   });
+  location.reload();
 }
 
 form.addEventListener("submit", handleSubmit);

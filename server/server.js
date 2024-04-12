@@ -25,17 +25,28 @@ app.get("/", function (request, response) {
 
 app.get("/reviews", function (request, response) {
   // response.json(message);
-  const reviews = db.prepare("SELECT * FROM review").all();
+  const reviews = db.prepare("SELECT * FROM review ORDER BY id DESC").all();
   response.json(reviews);
 });
 
 app.post("/reviews", function (request, response) {
   const newReview = request.body;
 
-  // response.json(newReview);
+  console.log(newReview);
 
-  // response.json("test");
-  console.log(request.body);
+  // Insert the new review into the database
+  const insertReview = db.prepare(
+    "INSERT INTO review (reviewer, subject, message, date, rating) VALUES (?, ?, ?, datetime('now'), ?)"
+  );
+  const result = insertReview.run(
+    newReview.reviewer,
+    newReview.subject,
+    newReview.message,
+    newReview.rating
+  );
+
+  // Return the inserted review
+  response.json(newReview);
 });
 
 app.listen(8080, function () {

@@ -1,4 +1,4 @@
-// const form = document.getElementById("messageForm");
+const form = document.getElementById("messageForm");
 const previousReviews = document.getElementById("previousReviews");
 
 async function getReviews() {
@@ -17,9 +17,9 @@ async function getReviews() {
 
     h2.textContent = review.subject;
     p.textContent = review.message;
-    p2.textContent = review.reviewer;
-    p3.textContent = review.date;
-    p4.textContent = review.rating;
+    p2.textContent = `Left by: ${review.reviewer} | `;
+    p3.textContent = `On Date: ${review.date} | `;
+    p4.textContent = `Rating: ${review.rating} star`;
 
     previousReviews.appendChild(h2);
     previousReviews.appendChild(p);
@@ -30,3 +30,44 @@ async function getReviews() {
 }
 
 getReviews();
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const reviewer = event.target.reviewer.value;
+  const subject = event.target.subject.value;
+  const message = event.target.message.value;
+  const rating = event.target.rating.value;
+
+  console.log({
+    reviewer: reviewer,
+    subject: subject,
+    message: message,
+    rating: rating,
+  });
+
+  fetch("http://localhost:8080/reviews", {
+    method: "POST",
+    body: JSON.stringify({
+      reviewer: reviewer,
+      subject: subject,
+      message: message,
+      rating: rating,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+form.addEventListener("submit", handleSubmit);
+
+// Get all the radio buttons
+const ratingInputs = document.querySelectorAll('input[name="rating"]');
+
+// Add event listener to each radio button
+ratingInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    const selectedRating = input.value;
+    // console.log("Selected rating:", selectedRating);
+  });
+});

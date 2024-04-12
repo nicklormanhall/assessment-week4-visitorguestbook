@@ -24,7 +24,18 @@ app.get("/", function (request, response) {
 });
 
 app.get("/reviews", function (request, response) {
-  response.json(message);
+  // response.json(message);
+  const reviews = db.prepare("SELECT * FROM review").all();
+  response.json(reviews);
+});
+
+app.post("/reviews", function (request, response) {
+  const newReview = request.body;
+
+  // response.json(newReview);
+
+  // response.json("test");
+  console.log(request.body);
 });
 
 app.listen(8080, function () {

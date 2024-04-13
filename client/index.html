@@ -5,54 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./app.js" defer type="module"></script>
     <link rel="stylesheet" href="./style.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Hammersmith+One"
+    /> -->
     <title>Guest Book</title>
   </head>
 
   <body>
-    <h1>The Overlook Hotel - leave a review</h1>
-    <form id="messageForm">
-      <label for="reviewer">Name:</label>
-      <input
-        type="text"
-        id="reviewer"
-        name="reviewer"
-        placeholder="Enter your name"
-      />
+    <header>
+      <h1>The Overlook Hotel</h1>
+      <h2 class="address">Mount Qualo, Colorado</h2>
+    </header>
+    <section class="reviewContainer">
+      <form id="reviewForm">
+        <label for="reviewer">Name:</label>
+        <input
+          type="text"
+          id="reviewer"
+          name="reviewer"
+          placeholder="Enter your name"
+        />
 
-      <label for="subject">Subject:</label>
-      <input
-        type="text"
-        id="subject"
-        name="subject"
-        placeholder="Subject of the review"
-      />
+        <label for="subject">Subject:</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Subject of the review"
+        />
 
-      <label for="message">Message</label>
-      <textarea
-        name="message"
-        id="message"
-        cols="30"
-        rows="10"
-        placeholder="Enter Your message"
-      ></textarea>
+        <label for="message">Message</label>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="10"
+          placeholder="Enter Your message"
+        ></textarea>
 
-      <div class="rating">
-        <input type="radio" id="star5" name="rating" value="5" />
-        <label for="star5"></label>
-        <input type="radio" id="star4" name="rating" value="4" />
-        <label for="star4"></label>
-        <input type="radio" id="star3" name="rating" value="3" />
-        <label for="star3"></label>
-        <input type="radio" id="star2" name="rating" value="2" />
-        <label for="star2"></label>
-        <input type="radio" id="star1" name="rating" value="1" />
-        <label for="star1"></label>
-      </div>
+        <div class="rating">
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label for="star5"></label>
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4"></label>
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3"></label>
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2"></label>
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1"></label>
+        </div>
 
-      <button>Submit</button>
-    </form>
+        <button>Submit</button>
+      </form>
+    </section>
 
-    <h2>Previous reviews</h2>
     <div id="previousReviews"></div>
   </body>
 </html>

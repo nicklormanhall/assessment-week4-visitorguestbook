@@ -8,7 +8,6 @@ async function getReviews() {
   console.log(reviews);
 
   reviews.forEach(function (review) {
-    // DOM manipulation to put the games onto the html
     const h2 = document.createElement("h2");
     const p = document.createElement("p");
     const p2 = document.createElement("p2");
@@ -17,15 +16,15 @@ async function getReviews() {
 
     h2.textContent = review.subject;
     p.textContent = review.message;
-    p2.textContent = `Left by: ${review.reviewer} | `;
+    p2.textContent = `Reviewed by: ${review.reviewer} | `;
     p3.textContent = `On: ${review.date} | `;
     p4.textContent = `Rating: ${review.rating} \u2605`;
 
     previousReviews.appendChild(h2);
-    previousReviews.appendChild(p);
     previousReviews.appendChild(p2);
     previousReviews.appendChild(p3);
     previousReviews.appendChild(p4);
+    previousReviews.appendChild(p);
   });
 }
 

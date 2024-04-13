@@ -1,11 +1,111 @@
 * {
-  font-family: "Cooper Black", sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: fixed;
+  margin: 0;
+  z-index: 1;
+  background-color: black;
+  color: white;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  margin: 10px;
+}
+
+#reviewForm {
+}
+
+#previousReviews {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 15px;
+}
+
+#previousReviews h2 {
+  /* border-top: 1px solid grey; */
+  color: blue;
+  font-size: 20px;
+  margin: 5px;
+  font-style: italic;
+}
+
+#previousReviews p {
+  /* border-top: 1px solid grey; */
+  font-size: 16px;
+  margin: 5px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+}
+
+#previousReviews p2 {
+  /* border-top: 1px solid grey; */
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+#previousReviews p3 {
+  /* border-top: 1px solid grey; */
+  font-size: 12px;
+  margin: 5px;
+}
+
+button {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 90px;
+  align-self: flex-end;
+  margin-right: 20px;
+}
+
+.address {
+  font-family: Impact;
+  font-variant: small-caps;
+  font-size: 14px;
+  margin: 10px;
+}
+
+.reviewContainer {
+  padding-top: 100px;
+  margin-top: 20px;
+  height: 50vh;
+  background-image: url("Hotel.webp");
+  background-size: cover;
+  background-position: center center;
+  opacity: 70%;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 465px;
+  margin: 0 auto;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
 }
 
 .rating {
@@ -28,4 +128,17 @@ form {
 
 .rating input:checked ~ label {
   background-image: url(star-filled.png);
+}
+
+@media (max-width: 480px) {
+  form {
+    width: auto;
+  }
+
+  .reviewContainer {
+    height: 30vh;
+  }
+  #previousReviews {
+    margin: 15px;
+  }
 }

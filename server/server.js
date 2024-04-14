@@ -53,7 +53,12 @@ app.delete("/reviews/:reviewId", function (request, response) {
   const reviewId = request.params.reviewId;
 
   const result = db.prepare("DELETE FROM review WHERE id = ?").run(reviewId);
-  response.json();
+
+  if (result.changes > 0) {
+    response.json({ message: "Review deleted successfully" });
+  } else {
+    response.status(404).json({ error: "Review not found" });
+  }
 });
 
 app.listen(8080, function () {

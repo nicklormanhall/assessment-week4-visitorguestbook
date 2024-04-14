@@ -28,13 +28,13 @@ PLANNING
 
 One page form to include:
 
-Header - Guest boook
+Header - Guest book
 1: Subject
 2: From
 3: Message
 4: stars 1 to 5?
 
-My theme will be a ficticious hotel where guests can leave 1-5 star review, I want an image of the hotel.
+My theme will be a fictitious hotel where guests can leave 1-5 star review, I want an image of the hotel.
 
 After looking at several options I decided on the Overlook Hotel from the Shining, allowing me to create several fake reviews with actors names.
 
@@ -80,3 +80,5 @@ https://assessment-week4-visitorguestbook-1.onrender.com/ (live)
 https://github.com/nicklormanhall/assessment-week4-visitorguestbook (github)
 
 A issue that I came across was when I was trying different things to fix issues, I would change one thing then another and found out it was something else but then I struggled to remember what changes I had made. I didn't think it was worth creating new branch because I thought it would be quick to fix but I may need to start to create new branches to keep better control.
+
+I came across a bug after I pushed to render where trying to add reviews would often not work. I realised this was an issue with my async/await and was able to correct

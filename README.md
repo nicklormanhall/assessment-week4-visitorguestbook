@@ -34,9 +34,34 @@ Header - Guest boook
 3: Message
 4: stars 1 to 5?
 
-Create Database schema
-ID
-subject
-message
-star
-Dateofreview
+My theme will be a ficticious hotel where guests can leave 1-5 star review, I want an image of the hotel.
+
+After looking at several options I decided on the Overlook Hotel from the Shining, allowing me to create several fake reviews with actors names.
+
+With this as my basis I decided to create my database schema and data first.
+
+MUST DO
+
+🎯 Create a page containing a form to leave a message and a list of all the messages that have been left.
+
+    DONE:
+
+🎯 Style the form and the messages so they're easy to read on multiple kinds of device.
+
+    DONE: I adjusted the screen margins and background image to change at 480px (for mobile) and 768 for tablets, the changes are minimal as the screens already works quite well (I do want  to look more into responsive design and ensure that going forward I cover the standard sizes)
+
+🎯 Create an API POST route to accept the text from your message input form
+
+    DONE:
+
+🎯 Create a database to store the messages, and create a seed file to create the table
+
+    DONE:
+
+🎯 Create an API GET route to retrieve all the messages from the database
+
+    DONE:
+
+🎯 Fetch the messages from your API in the browser and display them on the page.
+
+    DONE:

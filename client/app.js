@@ -1,5 +1,6 @@
-const form = document.getElementById("messageForm");
+const form = document.getElementById("reviewForm");
 const previousReviews = document.getElementById("previousReviews");
+const error = document.getElementById("error");
 
 async function getReviews() {
   const response = await fetch("http://localhost:8080/reviews");
@@ -36,6 +37,15 @@ function handleSubmit(event) {
   const subject = event.target.subject.value;
   const message = event.target.message.value;
   const rating = event.target.rating.value;
+
+  // Check if any field is empty -
+  if (!reviewer || !subject || !message || !rating) {
+    // Display error message
+    const errorElement = document.getElementById("error");
+    errorElement.textContent =
+      "Please fill in all fields and choose the star rating .";
+    return; // Stop form submission
+  }
 
   console.log({
     reviewer: reviewer,

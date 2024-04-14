@@ -108,6 +108,12 @@ form {
   border-radius: 10px;
 }
 
+#error {
+  position: absolute;
+  color: red;
+  align-self: flex-end;
+}
+
 .rating {
   display: flex;
   flex-direction: row-reverse;
@@ -128,6 +134,19 @@ form {
 
 .rating input:checked ~ label {
   background-image: url(star-filled.png);
+}
+
+@media (max-width: 768px) {
+  form {
+    width: auto;
+  }
+
+  .reviewContainer {
+    height: 30vh;
+  }
+  #previousReviews {
+    margin: 10px;
+  }
 }
 
 @media (max-width: 480px) {

@@ -66,7 +66,7 @@ function handleSubmit(event) {
     rating: rating,
   });
 
-  fetch("http://localhost:8080/reviews", {
+  fetch("https://assessment-week4-visitorguestbook.onrender.com/reviews", {
     method: "POST",
     body: JSON.stringify({
       reviewer: reviewer,
@@ -84,9 +84,12 @@ function handleSubmit(event) {
 form.addEventListener("submit", handleSubmit);
 
 async function deleteReview(reviewId) {
-  const response = await fetch(`http://localhost:8080/reviews/${reviewId}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `https://assessment-week4-visitorguestbook.onrender.com/reviews/${reviewId}`,
+    {
+      method: "DELETE",
+    }
+  );
 
   location.reload();
 }

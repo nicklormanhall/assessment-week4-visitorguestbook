@@ -42,7 +42,7 @@ async function getReviews() {
 
 getReviews();
 
-function handleSubmit(event) {
+async function handleSubmit(event) {
   console.log("handlesubmit"); //added to test
   event.preventDefault();
   const reviewer = event.target.reviewer.value;
@@ -66,18 +66,21 @@ function handleSubmit(event) {
     rating: rating,
   });
 
-  fetch("https://assessment-week4-visitorguestbook.onrender.com/reviews", {
-    method: "POST",
-    body: JSON.stringify({
-      reviewer: reviewer,
-      subject: subject,
-      message: message,
-      rating: rating,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  await fetch(
+    "https://assessment-week4-visitorguestbook.onrender.com/reviews",
+    {
+      method: "POST",
+      body: JSON.stringify({
+        reviewer: reviewer,
+        subject: subject,
+        message: message,
+        rating: rating,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   location.reload();
 }
 

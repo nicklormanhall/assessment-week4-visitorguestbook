@@ -65,3 +65,7 @@ MUST DO
 🎯 Fetch the messages from your API in the browser and display them on the page.
 
     DONE:
+
+Some additional things I added:
+Inclusion of the 1-5 stars, which were able to fill and unfill
+I added some error handling to ensure the fields were all populated on submit

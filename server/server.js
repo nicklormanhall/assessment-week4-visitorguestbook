@@ -49,6 +49,13 @@ app.post("/reviews", function (request, response) {
   response.json(newReview);
 });
 
+app.delete("/reviews/:reviewId", function (request, response) {
+  const reviewId = request.params.reviewId;
+
+  const result = db.prepare("DELETE FROM review WHERE id = ?").run(reviewId);
+  response.json();
+});
+
 app.listen(8080, function () {
   console.log("Set to port 8080");
 });

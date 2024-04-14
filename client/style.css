@@ -29,9 +29,6 @@ h1 {
   margin: 10px;
 }
 
-#reviewForm {
-}
-
 #previousReviews {
   margin-left: 100px;
   margin-right: 100px;
@@ -47,7 +44,6 @@ h1 {
 }
 
 #previousReviews p {
-  /* border-top: 1px solid grey; */
   font-size: 16px;
   margin: 5px;
   border-bottom: 1px solid grey;
@@ -55,7 +51,6 @@ h1 {
 }
 
 #previousReviews p2 {
-  /* border-top: 1px solid grey; */
   font-size: 12px;
   margin-left: 10px;
 }
@@ -77,6 +72,18 @@ button {
   width: 90px;
   align-self: flex-end;
   margin-right: 20px;
+}
+
+deleteButton {
+  border-radius: 20px;
+  padding: 5px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  height: auto;
+  width: auto;
+  float: right;
 }
 
 .address {
@@ -142,7 +149,7 @@ form {
   }
 
   .reviewContainer {
-    height: 30vh;
+    height: 50vh;
   }
   #previousReviews {
     margin: 10px;
@@ -155,7 +162,7 @@ form {
   }
 
   .reviewContainer {
-    height: 30vh;
+    height: 50vh;
   }
   #previousReviews {
     margin: 15px;

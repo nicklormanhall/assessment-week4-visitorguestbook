@@ -44,7 +44,7 @@ MUST DO
 
 🎯 Create a page containing a form to leave a message and a list of all the messages that have been left.
 
-    DONE:
+    DONE
 
 🎯 Style the form and the messages so they're easy to read on multiple kinds of device.
 
@@ -52,20 +52,31 @@ MUST DO
 
 🎯 Create an API POST route to accept the text from your message input form
 
-    DONE:
+    DONE
 
 🎯 Create a database to store the messages, and create a seed file to create the table
 
-    DONE:
+    DONE
 
 🎯 Create an API GET route to retrieve all the messages from the database
 
-    DONE:
+    DONE
 
 🎯 Fetch the messages from your API in the browser and display them on the page.
 
-    DONE:
+    DONE
 
 Some additional things I added:
 Inclusion of the 1-5 stars, which were able to fill and unfill
 I added some error handling to ensure the fields were all populated on submit
+
+STRECH GOAL
+
+🏹 Add a delete button to each message, that sends a request to the server to delete the message
+
+    DONE
+
+https://assessment-week4-visitorguestbook-1.onrender.com/ (live)
+https://github.com/nicklormanhall/assessment-week4-visitorguestbook (github)
+
+A issue that I came across was when I was trying different things to fix issues, I would change one thing then another and found out it was something else but then I struggled to remember what changes I had made. I didn't think it was worth creating new branch because I thought it would be quick to fix but I may need to start to create new branches to keep better control.
